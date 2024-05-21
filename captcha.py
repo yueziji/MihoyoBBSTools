@@ -30,6 +30,7 @@ def bbs_captcha(gt: str, challenge: str):
 
 
 def geetest(gt: str, challenge: str, referer: str):
+    global retries, max_retries
     print(gt)
     print(challenge)
     
