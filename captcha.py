@@ -31,6 +31,7 @@ def bbs_captcha(gt: str, challenge: str):
 
 def geetest(gt: str, challenge: str, referer: str):
     global retries, max_retries
+    retries = 0
     print(gt)
     print(challenge)
     
@@ -45,6 +46,7 @@ def geetest(gt: str, challenge: str, referer: str):
     print("开始过验证")
     if data['status'] == 1:
         resultid = data['resultid']
+        print(resultid)
         while retries < max_retries:
             try:
                 time.sleep(3)
@@ -53,11 +55,12 @@ def geetest(gt: str, challenge: str, referer: str):
                     'resultid': resultid
                 }, timeout=12)
                 jsondata = resdata.json()
+                print(jsondata)
                 if jsondata['msg'] == "识别成功":
                     print(jsondata['msg'])
                     return jsondata['data']  # 成功返回validate
-            except Timeout:
-                print("验证请求超时，重试中")
+            except Exception:
+                print("验证请求出错或超时，重试中")
                 retries += 1
             
     else:
