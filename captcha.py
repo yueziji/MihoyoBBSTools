@@ -56,6 +56,9 @@ def geetest(gt: str, challenge: str, referer: str):
                 }, timeout=12)
                 jsondata = resdata.json()
                 print(jsondata)
+                if jsondata['msg'] == "结果不存在":
+                    print("打码平台验证超时！")
+                    return None
                 if jsondata['msg'] == "识别成功":
                     print(jsondata['msg'])
                     return jsondata['data']  # 成功返回validate
