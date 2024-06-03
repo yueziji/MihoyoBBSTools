@@ -34,15 +34,20 @@ def geetest(gt: str, challenge: str, referer: str):
     retries = 0
     print(gt)
     print(challenge)
-    
-    response = http.post('http://api.ttocr.com/api/recognize', data={
-        'appkey': token,
-        'gt': gt,
-        'challenge': challenge,
-        'referer': referer,
-        'itemid': 37
-    }, timeout=6)
-    data = response.json()
+    while retries < max_retries:
+        try:
+            response = http.post('http://api.ttocr.com/api/recognize', data={
+                'appkey': token,
+                'gt': gt,
+                'challenge': challenge,
+                'referer': referer,
+                'itemid': 37
+            }, timeout=6)
+            data = response.json()
+            break
+        except Exception:
+            print("验证请求出错或超时，重试中")
+            retries += 1
     print("开始过验证")
     if data['status'] == 1:
         resultid = data['resultid']
