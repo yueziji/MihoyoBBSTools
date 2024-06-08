@@ -37,7 +37,7 @@ def geetest(gt: str, challenge: str, referer: str):
     while retries < max_retries:
         try:
             response = http.post('http://api.ttocr.com/api/recognize', data={
-                'appkey': token,
+                'appkey': config.config['captcha']['token'],
                 'gt': gt,
                 'challenge': challenge,
                 'referer': referer,
@@ -56,7 +56,7 @@ def geetest(gt: str, challenge: str, referer: str):
             try:
                 time.sleep(3)
                 resdata = http.post('http://api.ttocr.com/api/results', data={
-                    'appkey': token,
+                    'appkey': config.config['captcha']['token'],
                     'resultid': resultid
                 }, timeout=12)
                 jsondata = resdata.json()
