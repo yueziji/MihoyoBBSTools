@@ -41,7 +41,7 @@ def geetest(gt: str, challenge: str, referer: str):
                 'gt': gt,
                 'challenge': challenge,
                 'referer': referer,
-                'itemid': 37
+                'itemid': 388
             }, timeout=6)
             data = response.json()
             break
