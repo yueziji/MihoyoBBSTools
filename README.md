@@ -46,7 +46,7 @@
      > cookie: 你复制的cookie
      > ```
 
-  9. 通过[获取Stoken](https://github.com/Womsxd/mihoyo_login) 项目获取Stoken (麻烦可以去关闭BBS模块mihoyobbs.enable: false)
+  9. 通过[获取Stoken](https://github.com/Womsxd/mihoyo_login) 项目获取Stoken，或请参考[Hutao文档](https://hut.ao/zh/advanced/get-stoken-cookie-from-the-third-party.html)里的方法获取Stoken (麻烦可以去关闭BBS模块mihoyobbs.enable: false)
 
   10. 登录成功后复制 `stoken='获取到的Stoken'`里的`Stoken`，然后粘贴到`config.yaml`的`stoken: ""`中(在`account`里面)
 
@@ -219,15 +219,15 @@ kubectl logs $(kubectl get pod -l app=mihoyo -o jsonpath="{.items[0].metadata.na
 10. 完成，enjoy it！
 
 - 阿里云
-  1. 下载本项目
-  2. 在脚本目录执行`pip3 install -r requirements.txt -t .`
-  3. 在本地完整运行一次。
+  1. 下载本项目至本地
+  2. 在本地脚本目录执行`pip3 install -r requirements.txt -t .`
+  3. 在本地设置好config完整运行一次。（最好能一次完美过流程）
   4. 打开并登录[函数计算 FC](https://fcnext.console.aliyun.com/cn-hangzhou/services)。注意左上方显示的地区，可点击切换其他地区。
   5. 创建服务 （日志功能可能产生费用，建议关闭）
      1. 创建函数
      2. 从零开始创建
         1. `请求处理程序类型：处理事件请求`
-        2. 推荐设置运行环境为`Python3.9`
+        2. 推荐设置运行环境为`Python3.10`
         3. `请求处理程序：index.main_handler`，多用户请填写`index.main_handler_mulit`
         4. 配置触发器：触发器类型 定时触发器 异步调用。建议触发方式设为`指定时间`
         5. 点击创建

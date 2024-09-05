@@ -63,7 +63,10 @@ headers = {
 # 通用设置
 bbs_api = "https://bbs-api.miyoushe.com"
 web_api = "https://api-takumi.mihoyo.com"
+passport_api = "https://passport-api.mihoyo.com"
+
 account_Info_url = web_api + "/binding/api/getUserGameRolesByCookie"
+get_token_by_stoken = f"{passport_api}/account/ma-cn-session/app/getTokenBySToken"
 
 # 米游社的API列表
 bbs_account_info = "https://webapi.account.mihoyo.com/Api/cookie_accountinfo_by_loginticket"
@@ -89,6 +92,7 @@ hk4e_api_base_url = 'https://hk4e-api.mihoyo.com'
 hk4e_token_get_info_url = f'{web_api}/common/badge/v1/login/info'
 # 获取hk4e token
 get_hk4e_token_url = f'{web_api}/common/badge/v1/login/account'
+genius_invokation_status = f'{hk4e_api_base_url}/event/geniusinvokationtcg/rd_info'
 # 获取任务列表
 genius_invokation_task_url = f'{hk4e_api_base_url}/event/geniusinvokationtcg/adventure_task_list'
 # 领取任务奖励
