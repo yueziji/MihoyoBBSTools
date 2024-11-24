@@ -1,14 +1,14 @@
 # 米游社的Salt
 # java提取，会跟随版本更新
-mihoyobbs_salt = "rtvTthKxEyreVXQCnhluFgLXPOFKPHlA"
-mihoyobbs_salt_web = "EJncUPGnOHajenjLhBOsdpwEMZmiCmQX"
+mihoyobbs_salt = "oqrJbPCoFhWhFBNDvVRuldbrbiVxyWsP"
+mihoyobbs_salt_web = "zZDfHqEcwTqvvKDmqRcHyqqurxGgLfBV"
 # so提取 一般不会变
 mihoyobbs_salt_x4 = "xV8v4Qu54lUKrEYFZkJhB8cuOh9Asafs"
 mihoyobbs_salt_x6 = "t0qEgfub6cvueAPgR5m9aQWWVciEer7v"
 # 部分接口要带
 mihoyobbs_verify_key = "bll8iq97cem8"
 # 米游社的版本
-mihoyobbs_version = "2.71.1"  # Salt和Version相互对应
+mihoyobbs_version = "2.75.2"  # Salt和Version相互对应
 # 米游社的客户端类型
 mihoyobbs_Client_type = "2"  # 1为ios 2为安卓
 mihoyobbs_Client_type_web = "5"  # 4为pc web 5为mobile web
@@ -133,3 +133,7 @@ os_honkai_sr_act_id = "e202303301540311"
 os_honkai3rd_act_id = "e202110291205111"
 os_tearsofthemis_act_id = "e202202281857121"
 os_zzz_act_id = "e202406031448091"
+
+# 国际服云原神
+cloud_genshin_api_os = "https://sg-cg-api.hoyoverse.com"
+cloud_genshin_sgin_os = f"{cloud_genshin_api_os}/hk4e_global/cg/wallet/wallet/get"
